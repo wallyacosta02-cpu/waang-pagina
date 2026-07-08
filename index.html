@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>WAANG | T-Shirts</title>
@@ -10,152 +13,248 @@
 
 </head>
 
+
 <body>
 
-<header>
 
-    <div class="logo-container">
-        <img src="https://i.postimg.cc/64V5YM73/logo1.jpg" 
-        alt="WAANG Logo">
-    </div>
+<header class="header">
 
-    <div class="social">
-        <a href="https://instagram.com/waangrd" target="_blank">
-            Instagram: @waangrd
-        </a>
-    </div>
 
-    <button class="cart-button" onclick="abrirCarrito()">
-        🛍️ Carrito
-        <span id="contador">0</span>
-    </button>
+<div class="logo">
+
+<img src="https://i.postimg.cc/64V5YM73/logo1.jpg" alt="WAANG">
+
+</div>
+
+
+
+<div class="social">
+
+<a href="https://instagram.com/waangrd" target="_blank">
+Instagram @waangrd
+</a>
+
+</div>
+
+
+
+<button class="cart-btn" onclick="abrirCarrito()">
+
+🛍️ Carrito
+
+<span id="contador">0</span>
+
+</button>
+
 
 </header>
 
 
+
+
+
 <section class="hero">
+
+
+<img src="https://i.postimg.cc/64V5YM73/logo1.jpg" class="hero-logo">
+
 
 <h1>WAANG</h1>
 
+
 <p>
-Minimalismo, calidad y estilo en cada t-shirt.
+Minimalismo • Calidad • Estilo
 </p>
 
+
 </section>
+
+
+
 
 
 
 <section class="promo">
 
+
 <h2>🔥 OFERTA DE TEMPORADA</h2>
 
+
 <p>
-1 T-Shirt RD$1,000 |
-2 T-Shirts RD$1,500 |
-3 T-Shirts RD$2,200
+
+1 T-Shirt → RD$1,000
+
+<br>
+
+2 T-Shirts → RD$1,500
+
+<br>
+
+3 T-Shirts → RD$2,200
+
 </p>
 
+
 </section>
+
+
+
 
 
 
 
 <section class="horario">
 
-<h2>📅 Nuestro horario de operación</h2>
+
+<h2>📅 Nuestro Horario de Operación</h2>
 
 
-<div class="horarios">
+<div class="horario-grid">
+
 
 <div>
+
 <h3>Lunes a Jueves</h3>
-<p>Recibimos tus pedidos.</p>
+
+<p>
+Recibimos tus pedidos.
+</p>
+
 </div>
 
 
+
 <div>
+
 <h3>Viernes y Sábado</h3>
-<p>Elaboramos tus t-shirts.</p>
+
+<p>
+Elaboramos tus t-shirts.
+</p>
+
 </div>
+
 
 
 <div>
+
 <h3>Domingo</h3>
-<p>Realizamos las entregas.</p>
-</div>
+
+<p>
+Realizamos las entregas oficiales.
+</p>
 
 </div>
+
+
+</div>
+
 
 </section>
+
+
+
+
+
 
 
 
 
 <section class="productos">
 
+
 <h2>Colección WAANG</h2>
 
 
-<div id="lista-productos" class="grid">
+<div class="productos-grid">
 
 
 
-<!-- PRODUCTOS -->
 
+
+
+<!-- PRODUCTO 1 -->
 
 <div class="producto">
 
+
 <img src="https://i.postimg.cc/SjcsSxgW/t-shirt1.jpg">
+
 
 <h3>Olive T-Shirt</h3>
 
-<p>RD$1000</p>
+
+<p class="precio">
+RD$1,000
+</p>
+
+
 
 <select id="talla1">
 
 <option>S</option>
+
 <option>M</option>
+
 <option>L</option>
+
 <option>XL</option>
 
 </select>
 
 
-<button onclick="agregarProducto(
-'Olive T-Shirt',
-'talla1'
-)">
-Agregar
+
+<button onclick="agregarProducto('Olive T-Shirt','talla1')">
+
+Agregar al carrito
+
 </button>
+
 
 </div>
 
 
 
 
+
+
+
+<!-- PRODUCTO 2 -->
+
+
 <div class="producto">
+
 
 <img src="https://i.postimg.cc/q6cMj1th/t-shirt2.jpg">
 
+
 <h3>Black T-Shirt</h3>
 
-<p>RD$1000</p>
+
+<p class="precio">
+RD$1,000
+</p>
+
+
 
 <select id="talla2">
 
 <option>S</option>
+
 <option>M</option>
+
 <option>L</option>
+
 <option>XL</option>
 
 </select>
 
 
-<button onclick="agregarProducto(
-'Black T-Shirt',
-'talla2'
-)">
-Agregar
+
+<button onclick="agregarProducto('Black T-Shirt','talla2')">
+
+Agregar al carrito
+
 </button>
 
 
@@ -165,29 +264,44 @@ Agregar
 
 
 
+
+
+<!-- PRODUCTO 3 -->
+
+
 <div class="producto">
+
 
 <img src="https://i.postimg.cc/y3hYvLJD/t-shirt3.jpg">
 
+
 <h3>Brown T-Shirt</h3>
 
-<p>RD$1000</p>
+
+<p class="precio">
+RD$1,000
+</p>
+
+
 
 <select id="talla3">
 
 <option>S</option>
+
 <option>M</option>
+
 <option>L</option>
+
 <option>XL</option>
 
 </select>
 
 
-<button onclick="agregarProducto(
-'Brown T-Shirt',
-'talla3'
-)">
-Agregar
+
+<button onclick="agregarProducto('Brown T-Shirt','talla3')">
+
+Agregar al carrito
+
 </button>
 
 
@@ -197,29 +311,44 @@ Agregar
 
 
 
+
+
+<!-- PRODUCTO 4 -->
+
+
 <div class="producto">
+
 
 <img src="https://i.postimg.cc/30jJntyy/t-shirt4.jpg">
 
+
 <h3>Beige T-Shirt</h3>
 
-<p>RD$1000</p>
+
+<p class="precio">
+RD$1,000
+</p>
+
+
 
 <select id="talla4">
 
 <option>S</option>
+
 <option>M</option>
+
 <option>L</option>
+
 <option>XL</option>
 
 </select>
 
 
-<button onclick="agregarProducto(
-'Beige T-Shirt',
-'talla4'
-)">
-Agregar
+
+<button onclick="agregarProducto('Beige T-Shirt','talla4')">
+
+Agregar al carrito
+
 </button>
 
 
@@ -228,126 +357,184 @@ Agregar
 
 
 
+
+
+
+<!-- PRODUCTO 5 -->
+
+
 <div class="producto">
+
 
 <img src="https://i.postimg.cc/D4QyBxW8/t-shirt5.jpg">
 
+
 <h3>White Flowers</h3>
 
-<p>RD$1000</p>
+
+<p class="precio">
+RD$1,000
+</p>
+
+
 
 <select id="talla5">
 
 <option>S</option>
+
 <option>M</option>
+
 <option>L</option>
+
 <option>XL</option>
 
 </select>
 
 
-<button onclick="agregarProducto(
-'White Flowers',
-'talla5'
-)">
-Agregar
+
+<button onclick="agregarProducto('White Flowers','talla5')">
+
+Agregar al carrito
+
 </button>
+
 
 </div>
 
 
 
 
+
+
+
+<!-- PRODUCTO 6 -->
+
+
 <div class="producto">
+
 
 <img src="https://i.postimg.cc/XBK7QsZv/t-shirt6.jpg">
 
+
 <h3>Celeste T-Shirt</h3>
 
-<p>RD$1000</p>
+
+<p class="precio">
+RD$1,000
+</p>
+
+
 
 <select id="talla6">
 
 <option>S</option>
+
 <option>M</option>
+
 <option>L</option>
+
 <option>XL</option>
 
 </select>
 
 
-<button onclick="agregarProducto(
-'Celeste T-Shirt',
-'talla6'
-)">
-Agregar
+
+<button onclick="agregarProducto('Celeste T-Shirt','talla6')">
+
+Agregar al carrito
+
 </button>
+
 
 </div>
 
-
-
+<!-- PRODUCTO 7 -->
 
 <div class="producto">
 
+
 <img src="https://i.postimg.cc/vx7H301T/t-shirt7.jpg">
+
 
 <h3>White Ocean</h3>
 
-<p>RD$1000</p>
+
+<p class="precio">
+RD$1,000
+</p>
+
 
 <select id="talla7">
 
 <option>S</option>
+
 <option>M</option>
+
 <option>L</option>
+
 <option>XL</option>
 
 </select>
 
 
-<button onclick="agregarProducto(
-'White Ocean',
-'talla7'
-)">
-Agregar
+<button onclick="agregarProducto('White Ocean','talla7')">
+
+Agregar al carrito
+
 </button>
+
 
 </div>
 
 
+
+
+
+
+
+<!-- PRODUCTO 8 -->
 
 
 <div class="producto">
 
+
 <img src="https://i.postimg.cc/ct74XFKL/t-shirt8.jpg">
+
 
 <h3>Red Flowers</h3>
 
-<p>RD$1000</p>
+
+<p class="precio">
+RD$1,000
+</p>
+
 
 <select id="talla8">
 
 <option>S</option>
+
 <option>M</option>
+
 <option>L</option>
+
 <option>XL</option>
 
 </select>
 
 
-<button onclick="agregarProducto(
-'Red Flowers',
-'talla8'
-)">
-Agregar
+<button onclick="agregarProducto('Red Flowers','talla8')">
+
+Agregar al carrito
+
 </button>
 
-</div>
-
-
 
 </div>
+
+
+
+</div>
+
 
 </section>
 
@@ -355,64 +542,392 @@ Agregar
 
 
 
-<!-- CARRITO -->
+
+
+
+
+<section class="como-comprar">
+
+
+<h2>🛒 ¿Cómo comprar?</h2>
+
+
+<div class="pasos">
+
+
+<div>
+
+<span>1</span>
+
+<p>
+Selecciona tu diseño y talla favorita.
+</p>
+
+</div>
+
+
+
+<div>
+
+<span>2</span>
+
+<p>
+Agrega los productos al carrito.
+</p>
+
+</div>
+
+
+
+<div>
+
+<span>3</span>
+
+<p>
+Completa tus datos de entrega.
+</p>
+
+</div>
+
+
+
+<div>
+
+<span>4</span>
+
+<p>
+Envía tu pedido por WhatsApp.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="envios">
+
+
+<h2>🚚 Métodos de envío</h2>
+
+
+<div>
+
+
+<h3>🚇 Metro Santo Domingo</h3>
+
+<p>
+Costo: RD$100
+</p>
+
+
+</div>
+
+
+<div>
+
+
+<h3>📦 Vimenpaq</h3>
+
+<p>
+Costo: RD$300
+</p>
+
+
+</div>
+
+
+<div>
+
+
+<h3>🚌 Caribe Tours</h3>
+
+<p>
+Costo: RD$350
+</p>
+
+
+</div>
+
+
+
+<div>
+
+
+<h3>🛵 Retiro / Mensajería</h3>
+
+<p>
+El cliente puede enviar Uber, InDrive o mensajería.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="pagos">
+
+
+<h2>💳 Métodos de pago</h2>
+
+
+<p>
+Aceptamos transferencias y depósitos bancarios.
+</p>
+
+
+<p>
+Para entregas por Metro:
+50% de anticipo.
+</p>
+
+
+<p>
+Para Vimenpaq y Caribe Tours:
+Pago completo antes del envío.
+</p>
+
+
+<p>
+Tiempo de elaboración:
+4 a 5 días laborables.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- CARRITO LATERAL -->
+
 
 <div id="carrito" class="carrito">
+
+
+<button class="cerrar" onclick="cerrarCarrito()">
+
+✕
+
+</button>
+
+
 
 <h2>
 Tu pedido
 </h2>
 
 
-<div id="items"></div>
+
+
+<div id="items">
+
+</div>
+
+
+
+
+<div class="resumen">
 
 
 <h3>
-Total: RD$<span id="total">0</span>
+
+Subtotal:
+RD$<span id="subtotal">0</span>
+
 </h3>
 
 
-<input id="nombre" placeholder="Nombre">
+<h3>
 
-<input id="telefono" placeholder="Teléfono">
+Envío:
+RD$<span id="costo-envio">0</span>
+
+</h3>
 
 
-<textarea id="direccion" placeholder="Dirección"></textarea>
+
+<h2>
+
+Total:
+RD$<span id="total">0</span>
+
+</h2>
 
 
-<textarea id="referencia" placeholder="Referencia"></textarea>
+</div>
+
+
+
+
+
+
+<h3>Datos del cliente</h3>
+
+
+<input 
+id="nombre"
+placeholder="Nombre completo">
+
+
+
+<input 
+id="telefono"
+placeholder="Teléfono">
+
+
+
+<textarea
+id="direccion"
+placeholder="Dirección">
+</textarea>
+
+
+
+
+<textarea
+id="referencia"
+placeholder="Referencia o punto cercano">
+</textarea>
+
+
 
 
 
 
 <select id="envio">
 
+
 <option value="0">
-Retiro / Mensajería propia
+
+Selecciona método de entrega
+
 </option>
+
+
 
 <option value="100">
-Metro Santo Domingo RD$100
+
+Metro Santo Domingo - RD$100
+
 </option>
+
+
 
 <option value="300">
-Vimenpaq RD$300
+
+Vimenpaq - RD$300
+
 </option>
 
+
+
 <option value="350">
-Caribe Tours RD$350
+
+Caribe Tours - RD$350
+
 </option>
+
+
+
+<option value="0">
+
+Retiro / Mensajería propia
+
+</option>
+
+
 
 </select>
 
 
 
-<button onclick="enviarWhatsApp()">
-Enviar pedido por WhatsApp
+
+
+
+<button class="whatsapp"
+onclick="enviarWhatsApp()">
+
+💬 Enviar pedido por WhatsApp
+
 </button>
 
 
+
 </div>
+
+
+
+
+
+
+
+
+
+<section class="importante">
+
+
+<h2>
+Información importante
+</h2>
+
+
+<p>
+
+📌 Recibimos pedidos de lunes a jueves.
+
+</p>
+
+
+<p>
+
+📌 Elaboramos las t-shirts viernes y sábado.
+
+</p>
+
+
+<p>
+
+📌 Las entregas se realizan los domingos.
+
+</p>
+
+
+<p>
+
+📌 Cada pieza es elaborada bajo pedido.
+
+</p>
+
+
+
+</section>
+
+
+
+
 
 
 
@@ -420,19 +935,40 @@ Enviar pedido por WhatsApp
 
 <footer>
 
-<p>
-WAANG © 2026
-</p>
+
+<h2>WAANG</h2>
+
 
 <p>
-Instagram @waangrd
+Instagram:
+<a href="https://instagram.com/waangrd" target="_blank">
+@waangrd
+</a>
 </p>
+
+
+<p>
+WhatsApp:
+809-708-4033
+</p>
+
+
+<p>
+© WAANG Todos los derechos reservados
+</p>
+
 
 </footer>
 
 
 
+
+
+
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
