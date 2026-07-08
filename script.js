@@ -1,21 +1,23 @@
-/* =================================
-      WAANG STORE - JAVASCRIPT
-   Carrito + Promociones + WhatsApp
-================================= */
+/* ===================================
+        WAANG STORE JAVASCRIPT
+        Carrito + Promos + WhatsApp
+=================================== */
 
 
 let carrito = [];
 
 
 
-/* ABRIR CARRITO */
+
+
+// ABRIR CARRITO
 
 function abrirCarrito(){
 
     document
     .getElementById("carrito")
     .classList
-    .toggle("activo");
+    .add("activo");
 
 }
 
@@ -23,24 +25,63 @@ function abrirCarrito(){
 
 
 
-/* AGREGAR PRODUCTO */
+// CERRAR CARRITO
+
+function cerrarCarrito(){
+
+    document
+    .getElementById("carrito")
+    .classList
+    .remove("activo");
+
+}
+
+
+
+
+
+
+// AGREGAR PRODUCTO
 
 function agregarProducto(nombre, tallaID){
 
 
-    let talla = document
+    let talla =
+    document
     .getElementById(tallaID)
     .value;
 
 
 
-    carrito.push({
+    let productoExistente =
+    carrito.find(
+        producto =>
+        producto.nombre === nombre &&
+        producto.talla === talla
+    );
 
-        nombre:nombre,
-        talla:talla,
-        cantidad:1
 
-    });
+
+    if(productoExistente){
+
+        productoExistente.cantidad++;
+
+    }else{
+
+
+        carrito.push({
+
+            nombre:nombre,
+
+            talla:talla,
+
+            cantidad:1
+
+        });
+
+
+    }
+
 
 
     actualizarCarrito();
@@ -52,7 +93,9 @@ function agregarProducto(nombre, tallaID){
 
 
 
-/* ACTUALIZAR CARRITO */
+
+
+// MOSTRAR CARRITO
 
 
 function actualizarCarrito(){
@@ -62,7 +105,9 @@ function actualizarCarrito(){
     document.getElementById("items");
 
 
+
     contenedor.innerHTML="";
+
 
 
     carrito.forEach((producto,index)=>{
@@ -70,22 +115,56 @@ function actualizarCarrito(){
 
         contenedor.innerHTML += `
 
-        <div class="item-carrito">
 
-        <b>${producto.nombre}</b><br>
+        <div class="item">
 
-        Talla: ${producto.talla}<br>
 
-        Cantidad: ${producto.cantidad}
+        <b>${producto.nombre}</b>
+
 
         <br>
 
-        <button onclick="eliminarProducto(${index})">
-        Eliminar
+
+        Talla:
+        ${producto.talla}
+
+
+        <br><br>
+
+
+        Cantidad:
+
+
+        <button onclick="cambiarCantidad(${index},-1)">
+        -
         </button>
 
 
+
+        ${producto.cantidad}
+
+
+
+        <button onclick="cambiarCantidad(${index},1)">
+        +
+        </button>
+
+
+
+        <br><br>
+
+
+
+        <button onclick="eliminarProducto(${index})">
+
+        Eliminar
+
+        </button>
+
+
+
         </div>
+
 
         `;
 
@@ -97,11 +176,15 @@ function actualizarCarrito(){
     document
     .getElementById("contador")
     .innerHTML =
-    carrito.length;
+    carrito.reduce(
+        (total,p)=>total+p.cantidad,
+        0
+    );
 
 
 
     calcularTotal();
+
 
 
 }
@@ -110,7 +193,38 @@ function actualizarCarrito(){
 
 
 
-/* ELIMINAR PRODUCTO */
+
+
+// CAMBIAR CANTIDAD
+
+
+function cambiarCantidad(index,cambio){
+
+
+    carrito[index].cantidad += cambio;
+
+
+
+    if(carrito[index].cantidad <=0){
+
+        carrito.splice(index,1);
+
+    }
+
+
+
+    actualizarCarrito();
+
+
+}
+
+
+
+
+
+
+
+// ELIMINAR
 
 
 function eliminarProducto(index){
@@ -130,33 +244,28 @@ function eliminarProducto(index){
 
 
 
-/* CALCULO DE PROMOCIONES */
+// CALCULAR PROMOCION
 
 
 function calcularProductos(){
 
 
-    let cantidad = carrito.length;
+
+    let cantidad =
+    carrito.reduce(
+        (total,p)=>total+p.cantidad,
+        0
+    );
+
 
 
     let total = 0;
 
 
 
-    /*
-       PROMOS
+    while(cantidad >=3){
 
-       1 = 1000
-       2 = 1500
-       3 = 2200
-
-    */
-
-
-
-    while(cantidad >= 3){
-
-        total += 2200;
+        total +=2200;
 
         cantidad -=3;
 
@@ -164,14 +273,14 @@ function calcularProductos(){
 
 
 
-    if(cantidad === 2){
+    if(cantidad===2){
 
         total +=1500;
 
     }
 
 
-    else if(cantidad ===1){
+    if(cantidad===1){
 
         total +=1000;
 
@@ -190,28 +299,46 @@ function calcularProductos(){
 
 
 
-/* TOTAL */
+
+// TOTAL FINAL
 
 
 function calcularTotal(){
 
 
-    let productos =
+
+    let subtotal =
     calcularProductos();
 
 
 
     let envio =
     Number(
-    document.getElementById("envio").value
+        document
+        .getElementById("envio")
+        .value
     );
+
+
+
+    document
+    .getElementById("subtotal")
+    .innerHTML =
+    subtotal;
+
+
+
+    document
+    .getElementById("costo-envio")
+    .innerHTML =
+    envio;
 
 
 
     document
     .getElementById("total")
     .innerHTML =
-    productos + envio;
+    subtotal + envio;
 
 
 
@@ -223,7 +350,7 @@ function calcularTotal(){
 
 
 
-/* CAMBIAR ENVIO */
+// ACTUALIZAR ENVIO
 
 
 document
@@ -241,7 +368,7 @@ calcularTotal
 
 
 
-/* ENVIAR PEDIDO WHATSAPP */
+// ENVIAR WHATSAPP
 
 
 function enviarWhatsApp(){
@@ -251,12 +378,14 @@ function enviarWhatsApp(){
     if(carrito.length===0){
 
         alert(
-        "Agrega productos al carrito primero."
+        "Debes agregar productos al carrito."
         );
 
         return;
 
     }
+
+
 
 
 
@@ -288,7 +417,28 @@ function enviarWhatsApp(){
 
 
 
-    let envioTexto =
+
+
+    if(nombre==="" || telefono===""){
+
+
+        alert(
+        "Completa nombre y teléfono."
+        );
+
+
+        return;
+
+
+    }
+
+
+
+
+
+
+    let metodoEnvio =
+
     document
     .getElementById("envio")
     .options[
@@ -301,26 +451,39 @@ function enviarWhatsApp(){
 
 
 
-    let lista="";
+
+
+
+    let productos="";
 
 
 
     carrito.forEach(producto=>{
 
 
-        lista +=
-        `
+        productos +=
+
+`
 👕 ${producto.nombre}
+
 Talla: ${producto.talla}
 
+Cantidad: ${producto.cantidad}
+
+
 `;
+
 
     });
 
 
 
 
+
+
+
     let total =
+
     document
     .getElementById("total")
     .innerHTML;
@@ -329,9 +492,12 @@ Talla: ${producto.talla}
 
 
 
-    let mensaje =
 
-`🖤 NUEVO PEDIDO WAANG 🖤
+
+let mensaje =
+
+`
+🖤 *NUEVO PEDIDO WAANG* 🖤
 
 
 👤 Cliente:
@@ -353,13 +519,14 @@ ${referencia}
 
 🛍️ PRODUCTOS:
 
-${lista}
+
+${productos}
 
 
 
 🚚 Método de entrega:
 
-${envioTexto}
+${metodoEnvio}
 
 
 
@@ -369,23 +536,44 @@ RD$${total}
 
 
 
-Gracias por comprar en WAANG 🤍`;
+📅 Recordatorio:
+
+Pedidos:
+Lunes a Jueves
+
+Elaboración:
+Viernes y Sábado
+
+Entregas:
+Domingo
+
+
+
+Gracias por comprar en WAANG 🤍
+
+Instagram:
+@waangrd
+
+`;
 
 
 
 
 
 
-    let url =
+let url =
 
-    "https://wa.me/18097084033?text="
+"https://wa.me/18097084033?text="
 
-    +
-    encodeURIComponent(mensaje);
++
+
+encodeURIComponent(mensaje);
 
 
 
-    window.open(url,"_blank");
+
+
+window.open(url,"_blank");
 
 
 
