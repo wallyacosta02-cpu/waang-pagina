@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WAANG | T-Shirts</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo-container">
+        <img src="https://i.postimg.cc/64V5YM73/logo1.jpg" 
+        alt="WAANG Logo">
+    </div>
+
+    <div class="social">
+        <a href="https://instagram.com/waangrd" target="_blank">
+            Instagram: @waangrd
+        </a>
+    </div>
+
+    <button class="cart-button" onclick="abrirCarrito()">
+        🛍️ Carrito
+        <span id="contador">0</span>
+    </button>
+
+</header>
+
+
+<section class="hero">
+
+<h1>WAANG</h1>
+
+<p>
+Minimalismo, calidad y estilo en cada t-shirt.
+</p>
+
+</section>
+
+
+
+<section class="promo">
+
+<h2>🔥 OFERTA DE TEMPORADA</h2>
+
+<p>
+1 T-Shirt RD$1,000 |
+2 T-Shirts RD$1,500 |
+3 T-Shirts RD$2,200
+</p>
+
+</section>
+
+
+
+
+<section class="horario">
+
+<h2>📅 Nuestro horario de operación</h2>
+
+
+<div class="horarios">
+
+<div>
+<h3>Lunes a Jueves</h3>
+<p>Recibimos tus pedidos.</p>
+</div>
+
+
+<div>
+<h3>Viernes y Sábado</h3>
+<p>Elaboramos tus t-shirts.</p>
+</div>
+
+
+<div>
+<h3>Domingo</h3>
+<p>Realizamos las entregas.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<section class="productos">
+
+<h2>Colección WAANG</h2>
+
+
+<div id="lista-productos" class="grid">
+
+
+
+<!-- PRODUCTOS -->
+
+
+<div class="producto">
+
+<img src="https://i.postimg.cc/SjcsSxgW/t-shirt1.jpg">
+
+<h3>Olive T-Shirt</h3>
+
+<p>RD$1000</p>
+
+<select id="talla1">
+
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+
+</select>
+
+
+<button onclick="agregarProducto(
+'Olive T-Shirt',
+'talla1'
+)">
+Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<img src="https://i.postimg.cc/q6cMj1th/t-shirt2.jpg">
+
+<h3>Black T-Shirt</h3>
+
+<p>RD$1000</p>
+
+<select id="talla2">
+
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+
+</select>
+
+
+<button onclick="agregarProducto(
+'Black T-Shirt',
+'talla2'
+)">
+Agregar
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="producto">
+
+<img src="https://i.postimg.cc/y3hYvLJD/t-shirt3.jpg">
+
+<h3>Brown T-Shirt</h3>
+
+<p>RD$1000</p>
+
+<select id="talla3">
+
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+
+</select>
+
+
+<button onclick="agregarProducto(
+'Brown T-Shirt',
+'talla3'
+)">
+Agregar
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="producto">
+
+<img src="https://i.postimg.cc/30jJntyy/t-shirt4.jpg">
+
+<h3>Beige T-Shirt</h3>
+
+<p>RD$1000</p>
+
+<select id="talla4">
+
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+
+</select>
+
+
+<button onclick="agregarProducto(
+'Beige T-Shirt',
+'talla4'
+)">
+Agregar
+</button>
+
+
+</div>
+
+
+
+
+<div class="producto">
+
+<img src="https://i.postimg.cc/D4QyBxW8/t-shirt5.jpg">
+
+<h3>White Flowers</h3>
+
+<p>RD$1000</p>
+
+<select id="talla5">
+
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+
+</select>
+
+
+<button onclick="agregarProducto(
+'White Flowers',
+'talla5'
+)">
+Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<img src="https://i.postimg.cc/XBK7QsZv/t-shirt6.jpg">
+
+<h3>Celeste T-Shirt</h3>
+
+<p>RD$1000</p>
+
+<select id="talla6">
+
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+
+</select>
+
+
+<button onclick="agregarProducto(
+'Celeste T-Shirt',
+'talla6'
+)">
+Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<img src="https://i.postimg.cc/vx7H301T/t-shirt7.jpg">
+
+<h3>White Ocean</h3>
+
+<p>RD$1000</p>
+
+<select id="talla7">
+
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+
+</select>
+
+
+<button onclick="agregarProducto(
+'White Ocean',
+'talla7'
+)">
+Agregar
+</button>
+
+</div>
+
+
+
+
+<div class="producto">
+
+<img src="https://i.postimg.cc/ct74XFKL/t-shirt8.jpg">
+
+<h3>Red Flowers</h3>
+
+<p>RD$1000</p>
+
+<select id="talla8">
+
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+
+</select>
+
+
+<button onclick="agregarProducto(
+'Red Flowers',
+'talla8'
+)">
+Agregar
+</button>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- CARRITO -->
+
+<div id="carrito" class="carrito">
+
+<h2>
+Tu pedido
+</h2>
+
+
+<div id="items"></div>
+
+
+<h3>
+Total: RD$<span id="total">0</span>
+</h3>
+
+
+<input id="nombre" placeholder="Nombre">
+
+<input id="telefono" placeholder="Teléfono">
+
+
+<textarea id="direccion" placeholder="Dirección"></textarea>
+
+
+<textarea id="referencia" placeholder="Referencia"></textarea>
+
+
+
+
+<select id="envio">
+
+<option value="0">
+Retiro / Mensajería propia
+</option>
+
+<option value="100">
+Metro Santo Domingo RD$100
+</option>
+
+<option value="300">
+Vimenpaq RD$300
+</option>
+
+<option value="350">
+Caribe Tours RD$350
+</option>
+
+</select>
+
+
+
+<button onclick="enviarWhatsApp()">
+Enviar pedido por WhatsApp
+</button>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+<p>
+WAANG © 2026
+</p>
+
+<p>
+Instagram @waangrd
+</p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
